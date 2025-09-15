@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-slate-50 text-gray-800;
+        }
+        h1, h2 {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Custom hero section background with a subtle gradient */
+        .hero-bg {
+            background-image: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+        }
+        /* A simple fade-in animation for sections */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .loading-dots:after {
+            content: ' .';
+            animation: dots 1s linear infinite;
+        }
+        @keyframes dots {
+            0%   { content: ' .'; }
+            33%  { content: ' ..'; }
+            66%  { content: ' ...'; }
+            100% { content: ' .'; }
+        }
+    </style>
+</head>
+<body class="antialiased leading-relaxed">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- TODO: Replace "Your Name" with your full name or initials -->
+            <a href="#hero" class="text-2xl font-bold text-gray-900 tracking-wider">Your Name</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-105 nav-link" data-page="about">About</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-105 nav-link" data-page="projects">Projects</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-105 nav-link" data-page="resume">Resume</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-105 nav-link" data-page="blog">Blog</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-105 nav-link" data-page="skills">Skills</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-105 nav-link" data-page="contact">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 nav-link" data-page="about">About</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 nav-link" data-page="projects">Projects</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 nav-link" data-page="resume">Resume</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 nav-link" data-page="blog">Blog</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 nav-link" data-page="skills">Skills</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 nav-link" data-page="contact">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-bg rounded-3xl p-8 md:p-16 text-center md:text-left shadow-2xl transition-all duration-500 transform hover:shadow-3xl fade-in">
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-16">
+                <div class="md:w-1/2">
+                    <!-- TODO: Replace "Your Name" with your actual name -->
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-4">
+                        Hello, I'm <span class="text-blue-600">Your Name</span>.
+                    </h1>
+                    <!-- TODO: Replace this paragraph with a brief, compelling introduction about yourself -->
+                    <p class="text-lg sm:text-xl text-gray-600 mb-6">
+                        A passionate student specializing in [Your Field]. I love creating things and solving problems. Welcome to my portfolio!
+                    </p>
+                    <a href="#" class="inline-block px-8 py-4 bg-blue-600 text-white font-medium rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl nav-link" data-page="contact">
+                        Get in Touch
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <!-- TODO: Replace the placeholder image URL with your own profile picture URL -->
+                    <img src="https://placehold.co/300x300/e2e8f0/000000?text=Profile" alt="Your Profile Picture" class="w-64 h-64 rounded-full shadow-xl object-cover border-4 border-white transition-all duration-500 transform hover:scale-105 hover:shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="fade-in py-8 hidden">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">About Me</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- TODO: Replace the content below with details about your academic and personal background -->
+                <p class="text-lg text-gray-700 mb-6">
+                    I am a [Your Year] student at [Your University/School], majoring in [Your Major]. My academic journey has been focused on [mention a specific area of interest], and I am constantly seeking to expand my knowledge and skills.
+                </p>
+                <p class="text-lg text-gray-700 mb-8">
+                    When I'm not studying or working on projects, you can find me [mention a hobby, e.g., "reading books on modern history," "hiking in the local park," or "contributing to open-source projects"]. I'm a firm believer in lifelong learning and collaboration.
+                </p>
+                <!-- New LLM-powered content section -->
+                <div class="mt-8 border-t border-gray-200 pt-8 text-left">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Need help writing your bio?</h3>
+                    <p class="text-gray-600 mb-4">
+                        Describe yourself in a few keywords (e.g., "passionate," "data science," "hiking," "Python") and let Gemini generate a professional bio for you!
+                    </p>
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-4">
+                        <input type="text" id="bio-keywords" class="flex-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" placeholder="Enter keywords here...">
+                        <button id="generate-bio-btn" class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 transition-all duration-200 transform hover:scale-105">
+                            Generate Bio with ✨ Gemini
+                        </button>
+                    </div>
+                    <div id="bio-result-container" class="mt-6 p-6 bg-white rounded-xl shadow-lg border border-gray-200 hidden">
+                        <p id="bio-result" class="text-gray-800 italic leading-relaxed"></p>
+                    </div>
+                    <div id="loading-spinner" class="hidden text-center text-gray-500 mt-4">
+                        Generating bio<span class="loading-dots"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fade-in py-8 hidden">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">My Projects</h2>
+            <div class="space-y-24">
+                <!-- Project Section 1 -->
+                <section id="project-1" class="bg-gray-100 rounded-2xl shadow-inner px-8 py-16">
+                    <div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12 max-w-5xl mx-auto">
+                        <!-- TODO: Replace the image URL with an image of your project -->
+                        <img src="https://placehold.co/600x400/cbd5e1/4a5568?text=Project+1+Image" alt="Project 1 Image" class="w-full md:w-1/2 h-auto rounded-xl shadow-md">
+                        <div class="md:w-1/2">
+                            <!-- TODO: Replace the project title and description -->
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Project Title One</h3>
+                            <p class="text-lg text-gray-700 mb-6">
+                                A detailed description of your first project. Explain the problem you were trying to solve, the technologies you used (e.g., Python, JavaScript, React), your process, and the results. You can also talk about the challenges you faced and what you learned.
+                            </p>
+                            <a href="#" class="text-blue-600 hover:underline font-semibold transition-colors duration-200">View Project →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project Section 2 -->
+                <section id="project-2" class="fade-in">
+                    <div class="flex flex-col-reverse md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12 max-w-5xl mx-auto">
+                        <div class="md:w-1/2">
+                            <!-- TODO: Replace the project title and description -->
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Project Title Two</h3>
+                            <p class="text-lg text-gray-700 mb-6">
+                                A detailed description of your second project. This is a great place to showcase your problem-solving skills and technical abilities. Talk about the project's features and your contributions.
+                            </p>
+                            <a href="#" class="text-blue-600 hover:underline font-semibold transition-colors duration-200">View Project →</a>
+                        </div>
+                        <!-- TODO: Replace the image URL with an image of your project -->
+                        <img src="https://placehold.co/600x400/a3b18a/283618?text=Project+2+Image" alt="Project 2 Image" class="w-full md:w-1/2 h-auto rounded-xl shadow-md">
+                    </div>
+                </section>
+
+                <!-- Project Section 3 -->
+                <section id="project-3" class="bg-gray-100 rounded-2xl shadow-inner px-8 py-16">
+                    <div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12 max-w-5xl mx-auto">
+                        <!-- TODO: Replace the image URL with an image of your project -->
+                        <img src="https://placehold.co/600x400/94a3b8/283618?text=Project+3+Image" alt="Project 3 Image" class="w-full md:w-1/2 h-auto rounded-xl shadow-md">
+                        <div class="md:w-1/2">
+                            <!-- TODO: Replace the project title and description -->
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Project Title Three</h3>
+                            <p class="text-lg text-gray-700 mb-6">
+                                A detailed description of your third project. This could be a team project, a personal passion project, or a significant class assignment. Highlight what makes it unique and what you're most proud of.
+                            </p>
+                            <a href="#" class="text-blue-600 hover:underline font-semibold transition-colors duration-200">View Project →</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Resume/CV Section -->
+        <section id="resume" class="py-16 fade-in hidden">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Resume & Experience</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-lg text-gray-700 mb-8">
+                    Here is a summary of my academic and professional experience. You can download my full resume below.
+                </p>
+                <!-- TODO: Add the URL to your resume file in the href attribute -->
+                <a href="https://your-domain.com/path-to-your-resume.pdf" class="inline-block px-8 py-4 bg-blue-600 text-white font-medium rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl" download>
+                    Download Resume
+                </a>
+            </div>
+        </section>
+
+        <!-- Blog/Articles Section -->
+        <section id="blog" class="py-16 bg-gray-100 rounded-2xl shadow-inner fade-in hidden">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Articles & Blog Posts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- TODO: For each blog post card, replace the image, title, date, and link -->
+                <!-- Blog Post Card 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/4a5568/a0aec0?text=Article+1+Image" alt="Article 1 Image" class="w-full h-48 object-cover rounded-xl mb-4 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">How to Build a Portfolio</h3>
+                    <p class="text-sm text-gray-500 mb-4">Published: May 20, 2024</p>
+                    <a href="#" class="text-blue-600 hover:underline font-semibold transition-colors duration-200">Read More →</a>
+                </div>
+                <!-- Blog Post Card 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/2f4f4f/d3d3d3?text=Article+2+Image" alt="Article 2 Image" class="w-full h-48 object-cover rounded-xl mb-4 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">My Journey into Data Science</h3>
+                    <p class="text-sm text-gray-500 mb-4">Published: April 15, 2024</p>
+                    <a href="#" class="text-blue-600 hover:underline font-semibold transition-colors duration-200">Read More →</a>
+                </div>
+                <!-- Blog Post Card 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/8b4513/f5deb3?text=Article+3+Image" alt="Article 3 Image" class="w-full h-48 object-cover rounded-xl mb-4 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">A Guide to Getting Started with [Your Topic]</h3>
+                    <p class="text-sm text-gray-500 mb-4">Published: March 1, 2024</p>
+                    <a href="#" class="text-blue-600 hover:underline font-semibold transition-colors duration-200">Read More →</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 fade-in hidden">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Skills</h2>
+            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                <!-- TODO: Replace the skills below with your own, you can add or remove as many as you need -->
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-6 py-3 rounded-full shadow-md transform hover:scale-110 transition-transform duration-300 cursor-pointer">Skill 1</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-6 py-3 rounded-full shadow-md transform hover:scale-110 transition-transform duration-300 cursor-pointer">Skill 2</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-6 py-3 rounded-full shadow-md transform hover:scale-110 transition-transform duration-300 cursor-pointer">Skill 3</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-6 py-3 rounded-full shadow-md transform hover:scale-110 transition-transform duration-300 cursor-pointer">Skill 4</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-6 py-3 rounded-full shadow-md transform hover:scale-110 transition-transform duration-300 cursor-pointer">Skill 5</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-6 py-3 rounded-full shadow-md transform hover:scale-110 transition-transform duration-300 cursor-pointer">Skill 6</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-blue-600 text-white rounded-3xl shadow-xl fade-in hidden">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-4">Let's Connect!</h2>
+                <p class="text-lg mb-8">
+                    Feel free to reach out to me for collaborations, questions, or just to say hi.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- TODO: Update the href for your LinkedIn and GitHub profiles -->
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="flex items-center space-x-2 text-white hover:text-blue-200 transition-colors duration-200">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.5 2.5s-2.5-1.119-2.5-2.5c0-1.381 1.11-2.5 2.5-2.5s2.5 1.119 2.5 2.5zm-.01 20.5h-4.99v-16h4.99v16zm8.01 0h-4.99v-10.224c0-2.384-.044-4.636-2.5-4.636-2.502 0-2.884 2.112-2.884 4.542v10.318h-4.992v-16h4.992v2.19c-.042.062-.084.132-.122.193h.001l-.001-.001c.642-1.22 2.117-2.483 4.417-2.483 3.415 0 6.002 2.296 6.002 7.291v10.879z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/yourprofile" target="_blank" class="flex items-center space-x-2 text-white hover:text-blue-200 transition-colors duration-200">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.611-4.043-1.611-.546-1.387-1.332-1.758-1.332-1.758-1.08-.737.082-.722.082-.722 1.196.084 1.826 1.228 1.826 1.228 1.06 1.815 2.783 1.29 3.454.985.108-.767.418-1.29.762-1.587-2.645-.297-5.424-1.322-5.424-5.918 0-1.309.467-2.378 1.227-3.224-.124-.298-.532-1.52.116-3.176 0 0 1-.322 3.3 1.23.95-.264 1.956-.396 2.96-.396 1.004 0 2.01.132 2.96.396 2.296-1.552 3.296-1.23 3.296-1.23.648 1.656.24 2.878.116 3.176.76.846 1.226 1.915 1.226 3.224 0 4.598-2.783 5.617-5.436 5.911.428.368.815 1.096.815 2.21 0 1.597-.015 2.88-.015 3.27 0 .317.218.687.825.576C20.562 21.8 24 17.302 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-8">
+        <!-- TODO: Change "Your Name" to your actual name -->
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Page Toggling -->
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const main = document.querySelector('main');
+        const sections = main.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const bioButton = document.getElementById('generate-bio-btn');
+        const bioKeywordsInput = document.getElementById('bio-keywords');
+        const bioResultContainer = document.getElementById('bio-result-container');
+        const bioResult = document.getElementById('bio-result');
+        const loadingSpinner = document.getElementById('loading-spinner');
+
+        // Initial setup to show only the hero section
+        sections.forEach(section => {
+            if (section.id !== 'hero') {
+                section.classList.add('hidden');
+            }
+        });
+
+        // Toggle the mobile menu
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Handle navigation clicks to show/hide sections
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default anchor link behavior
+                
+                const targetPageId = event.target.dataset.page;
+                
+                // Hide all sections first
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                    section.classList.remove('fade-in'); // Reset animation
+                });
+                
+                // Show the target section
+                const targetSection = document.getElementById(targetPageId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                    targetSection.classList.add('fade-in'); // Add fade-in animation
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Gemini API integration for bio generation
+        bioButton.addEventListener('click', async () => {
+            const keywords = bioKeywordsInput.value.trim();
+            if (!keywords) {
+                bioResult.textContent = "Please enter some keywords to generate a bio.";
+                bioResultContainer.classList.remove('hidden');
+                return;
+            }
+
+            loadingSpinner.classList.remove('hidden');
+            bioResultContainer.classList.add('hidden');
+            bioResult.textContent = '';
+            bioButton.disabled = true;
+
+            const prompt = `Write a short, professional 'About Me' section for a student portfolio based on the following keywords: ${keywords}. Focus on being concise and engaging.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            try {
+                let response = null;
+                const maxRetries = 3;
+                let retries = 0;
+                while (retries < maxRetries) {
+                    try {
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        if (response.status === 429) { // Too many requests
+                            retries++;
+                            await new Promise(res => setTimeout(res, 2 ** retries * 1000)); // Exponential backoff
+                            continue;
+                        }
+                        break;
+                    } catch (e) {
+                        retries++;
+                        await new Promise(res => setTimeout(res, 2 ** retries * 1000)); // Exponential backoff
+                    }
+                }
+                
+                if (!response || !response.ok) {
+                    throw new Error(`API call failed with status: ${response ? response.status : 'unknown'}`);
+                }
+
+                const result = await response.json();
+                const generatedText = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Failed to generate bio. Please try again.";
+                bioResult.textContent = generatedText;
+                bioResultContainer.classList.remove('hidden');
+            } catch (error) {
+                console.error("Error generating bio:", error);
+                bioResult.textContent = "An error occurred while generating the bio. Please check the console for details.";
+                bioResultContainer.classList.remove('hidden');
+            } finally {
+                loadingSpinner.classList.add('hidden');
+                bioButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
